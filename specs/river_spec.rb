@@ -11,7 +11,20 @@ class TestRiver < MiniTest::Test
 # must start with "test_"
   def setup
     @amazon = River.new("Amazon")
+
     @perch = Fish.new("perch")
+    @carp = Fish.new("carp")
+    @loach = Fish.new("loach")
+    @bream = Fish.new("bream")
+    @trout = Fish.new("trout")
+    @salmon = Fish.new("salmon")
+
+    @tay = River.new("Tay", @perch, @carp, @loach, @bream, @trout, @salmon)
+
+
+
+
+
 
   end
 
@@ -19,6 +32,13 @@ class TestRiver < MiniTest::Test
     expected = "Amazon"
     output = @amazon.name
     assert_equal("Amazon", output)
+  end
+
+  def test_river_has_fish
+    @tay.count_fish
+    expected = 6
+    output = @tay.count_fish
+    assert_equal(expected, output)
   end
 
 
@@ -29,6 +49,9 @@ class TestRiver < MiniTest::Test
     output = @amazon.count_fish
     assert_equal(expected, output)
   end
+
+
+
 
 
 

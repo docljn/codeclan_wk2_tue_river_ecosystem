@@ -4,11 +4,12 @@ class River
 
   def initialize(name, *contents)
     @name = name
-    @contents ||= []
+    @contents = contents || []
   end
 
   def count_fish
     return @contents.length
+    p @contents
   end
 
 
