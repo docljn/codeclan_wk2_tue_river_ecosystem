@@ -4,12 +4,15 @@ require "minitest/reporters"
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
 require_relative("../river")
+require_relative("../fish")
 
 class TestRiver < MiniTest::Test
 # TEST FUNCTION NAMING
 # must start with "test_"
   def setup
     @amazon = River.new("Amazon")
+    @perch = Fish.new("perch")
+
   end
 
   def test_river_has_name
@@ -18,13 +21,15 @@ class TestRiver < MiniTest::Test
     assert_equal("Amazon", output)
   end
 
-  def test_river_has_fish
-    skip ""
-  end
+
 
   def test_stock_river_adds_fish
-    skip ""
+    @amazon.stock_river(@perch)
+    expected = 1
+    output = @amazon.count_fish
+    assert_equal(expected, output)
   end
+
 
 
 

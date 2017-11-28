@@ -2,9 +2,18 @@ class River
 
   attr_reader :name
 
-  def initialize(name)
+  def initialize(name, *contents)
     @name = name
-    @contents = []
+    @contents ||= []
+  end
+
+  def count_fish
+    return @contents.length
+  end
+
+
+  def stock_river(fish)
+    @contents.push(fish)
   end
 
 
