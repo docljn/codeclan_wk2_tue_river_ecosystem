@@ -18,6 +18,10 @@ class Bear
     @stomach.push(taken)
   end
 
+  def growls(words)
+    return "GRRRR! #{words.upcase}! GRRRR!"
+  end
+
 
 
 end

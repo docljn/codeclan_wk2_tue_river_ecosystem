@@ -47,6 +47,11 @@ class TestBear < MiniTest::Test
     assert_equal(expected, output)
   end
 
+  def test_bear_growls
+    assert_equal(@yogi.growls("who's been eating my porridge"), "GRRRR! WHO'S BEEN EATING MY PORRIDGE! GRRRR!")
+  end
+
+
 
 
 
