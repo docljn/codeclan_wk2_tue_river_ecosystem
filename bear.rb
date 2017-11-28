@@ -16,6 +16,10 @@ class Bear
     taken = river.contents.sample
     river.contents.delete(taken)
     @stomach.push(taken)
+    if taken.name == "puffer"
+      @stomach.clear()
+      growls("I feel so sick")
+    end
   end
 
   def growls(words)

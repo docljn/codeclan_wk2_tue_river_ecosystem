@@ -8,8 +8,8 @@ require_relative("../fish")
 require_relative("../river")
 
 class TestBear < MiniTest::Test
-# TEST FUNCTION NAMING
-# must start with "test_"
+  # TEST FUNCTION NAMING
+  # must start with "test_"
 
   def setup
     @yogi = Bear.new("Yogi")
@@ -22,6 +22,10 @@ class TestBear < MiniTest::Test
     @salmon = Fish.new("salmon")
 
     @tay = River.new("Tay", @perch, @carp, @loach, @bream, @trout, @salmon)
+
+
+    @puffer = Fish.new("puffer")
+    @orinoco = River.new("Orinoco", @puffer)
   end
 
 
@@ -49,6 +53,16 @@ class TestBear < MiniTest::Test
 
   def test_bear_growls
     assert_equal(@yogi.growls("who's been eating my porridge"), "GRRRR! WHO'S BEEN EATING MY PORRIDGE! GRRRR!")
+  end
+
+  def test_eat_fish__poisonous
+    3.times do
+        @yogi.eat_fish(@tay)
+      end
+    assert_equal(3, @yogi.fish_count)
+
+    @yogi.eat_fish(@orinoco)
+    assert_equal(0, @yogi.fish_count)
   end
 
 
