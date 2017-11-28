@@ -21,11 +21,6 @@ class TestRiver < MiniTest::Test
 
     @tay = River.new("Tay", @perch, @carp, @loach, @bream, @trout, @salmon)
 
-
-
-
-
-
   end
 
   def test_river_has_name
@@ -41,14 +36,17 @@ class TestRiver < MiniTest::Test
     assert_equal(expected, output)
   end
 
-
-
   def test_stock_river_adds_fish
     @amazon.stock_river(@perch)
     expected = 1
     output = @amazon.count_fish
     assert_equal(expected, output)
   end
+
+
+
+
+
 
 
 

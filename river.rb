@@ -1,6 +1,6 @@
 class River
 
-  attr_reader :name
+  attr_reader :name, :contents #needed so bear can select a fish
 
   def initialize(name, *contents)
     @name = name
@@ -9,13 +9,13 @@ class River
 
   def count_fish
     return @contents.length
-    p @contents
   end
 
 
   def stock_river(fish)
     @contents.push(fish)
   end
+
 
 
 end
