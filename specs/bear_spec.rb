@@ -65,10 +65,5 @@ class TestBear < MiniTest::Test
     assert_equal(0, @yogi.fish_count)
   end
 
-
-
-
-
-
 end
 # end bear_spec.rb

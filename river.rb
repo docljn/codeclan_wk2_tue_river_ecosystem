@@ -4,7 +4,7 @@ class River
 
   def initialize(name, *contents)
     @name = name
-    @contents = contents || []
+    @contents = contents || []  # not sure if this is valid syntax, but it seems to work, so...?
   end
 
   def count_fish
@@ -12,8 +12,8 @@ class River
   end
 
 
-  def stock_river(fish)
-    @contents.push(fish)
+  def stock_river(one_fish)
+    @contents.push(one_fish)
   end
 
 

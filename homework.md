@@ -20,5 +20,5 @@ We are going to build a small ecosystem! We want to create an ecosystem made up 
 - A bear could have a food_count method
 - A river could have a fish_count method
 
-## Just for fun
+## Just for fun - my addition
 - If a bear ate a poisonous fish, it could empty the stomach
