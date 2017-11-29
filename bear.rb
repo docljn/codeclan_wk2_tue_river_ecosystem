@@ -13,14 +13,24 @@ class Bear
   end
 
   def eat_fish(river)
-    taken = river.contents.sample
-    river.contents.delete(taken)
+    taken = river.sample_contents
+    river.remove_fish(taken)
     @stomach.push(taken)
     if taken.name == "puffer"
       @stomach.clear()
       growls("I feel so sick")
     end
   end
+
+  # refactoring eat_fish?
+  # 1.  Bear tells river to remove a fish from its fish stock.
+  # instead of river.contents.delete(taken)
+  # river.remove_fish(taken)
+  # add method to river instead of bear....
+
+  # 2. Bear tells river to provide a random fish to catch.
+  # instead of taken = river.contents.sample
+  # taken = river.sample_contents
 
   def growls(words)
     return "GRRRR! #{words.upcase}! GRRRR!"

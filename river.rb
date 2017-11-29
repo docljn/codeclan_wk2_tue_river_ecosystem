@@ -16,6 +16,13 @@ class River
     @contents.push(one_fish)
   end
 
+ def remove_fish(fish)
+   @contents.delete(fish)
+ end
+
+ def sample_contents
+   @contents.sample
+ end
 
 
 end

@@ -44,16 +44,21 @@ class TestRiver < MiniTest::Test
     assert_equal(expected, output)
   end
 
+  def test_remove_fish_reduces_fish_count
+    @amazon.stock_river(@salmon)
+    @amazon.stock_river(@bream)
+    @amazon.remove_fish(@salmon)
+    expected = 1
+    output = @amazon.count_fish
+    assert_equal(expected, output)
+  end
 
-
-
-
-
-
-
-
-
-
+  def test_sample_contents_returns_fish
+    @amazon.stock_river(@salmon)
+    result = @amazon.sample_contents.class
+    expected = Fish
+    assert_equal(expected, result)
+  end
 
 
 
