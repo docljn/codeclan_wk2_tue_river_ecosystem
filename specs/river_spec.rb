@@ -54,9 +54,11 @@ class TestRiver < MiniTest::Test
   end
 
   def test_sample_contents_returns_fish
+    # better not to check the class of the object
+    # test may not be specific enough
     @amazon.stock_river(@salmon)
-    result = @amazon.sample_contents.class
-    expected = Fish
+    result = @amazon.sample_contents.name
+    expected = "salmon"
     assert_equal(expected, result)
   end
 
