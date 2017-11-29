@@ -62,6 +62,9 @@ class TestRiver < MiniTest::Test
     assert_equal(expected, result)
   end
 
+  # consider adding a test to make sure that taking a fish
+  # from an empty river has no effect on bear or river.
+
 
 
 end
